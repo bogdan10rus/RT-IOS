@@ -6,6 +6,11 @@ target 'TalkyFoxy' do
   use_frameworks!
 
   # Pods for TalkyFoxy
-  pod 'Alamofire'
+  pod 'RxSwift'
+  pod 'RxCocoa'
   pod 'SnapKit'
+  pod 'ObjectMapper'
+  pod 'RxAlamofire'
+  pod 'Alamofire'
+  pod 'Kingfisher'  
 end

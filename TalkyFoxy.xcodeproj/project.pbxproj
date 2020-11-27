@@ -3,25 +3,41 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		60FD63D17CB4D76B4F2549D0 /* Pods_TalkyFoxy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7679BCC835A196F154C404AC /* Pods_TalkyFoxy.framework */; };
+		7421C0572571A2870060F35F /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7421C0562571A2870060F35F /* ApiService.swift */; };
+		7421C05A2571A2CC0060F35F /* ApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7421C0592571A2CC0060F35F /* ApiRequest.swift */; };
+		7421C05D2571A2F50060F35F /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7421C05C2571A2F50060F35F /* ApiError.swift */; };
 		74E4C9EF25719295008A4BA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E4C9EE25719295008A4BA4 /* AppDelegate.swift */; };
-		74E4C9F325719295008A4BA4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E4C9F225719295008A4BA4 /* ViewController.swift */; };
 		74E4C9F825719299008A4BA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74E4C9F725719299008A4BA4 /* Assets.xcassets */; };
 		74E4C9FB25719299008A4BA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74E4C9F925719299008A4BA4 /* LaunchScreen.storyboard */; };
+		74E4CA102571979F008A4BA4 /* TasksListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E4CA0F2571979F008A4BA4 /* TasksListView.swift */; };
+		74E4CA13257197AD008A4BA4 /* TasksListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E4CA12257197AD008A4BA4 /* TasksListViewModel.swift */; };
+		74E4CA16257197B9008A4BA4 /* TasksListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E4CA15257197B9008A4BA4 /* TasksListCoordinator.swift */; };
+		74E4CA19257198F8008A4BA4 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E4CA18257198F8008A4BA4 /* AppCoordinator.swift */; };
+		74E4CA1C25719C34008A4BA4 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E4CA1B25719C34008A4BA4 /* Coordinator.swift */; };
+		74E4CA2A25719E12008A4BA4 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E4CA2925719E12008A4BA4 /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		43F2DF08F3B170C6E599B599 /* Pods-TalkyFoxy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TalkyFoxy.debug.xcconfig"; path = "Target Support Files/Pods-TalkyFoxy/Pods-TalkyFoxy.debug.xcconfig"; sourceTree = "<group>"; };
+		7421C0562571A2870060F35F /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		7421C0592571A2CC0060F35F /* ApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequest.swift; sourceTree = "<group>"; };
+		7421C05C2571A2F50060F35F /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
 		74E4C9EB25719295008A4BA4 /* TalkyFoxy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TalkyFoxy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74E4C9EE25719295008A4BA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		74E4C9F225719295008A4BA4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		74E4C9F725719299008A4BA4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		74E4C9FA25719299008A4BA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		74E4C9FC25719299008A4BA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		74E4CA0F2571979F008A4BA4 /* TasksListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksListView.swift; sourceTree = "<group>"; };
+		74E4CA12257197AD008A4BA4 /* TasksListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksListViewModel.swift; sourceTree = "<group>"; };
+		74E4CA15257197B9008A4BA4 /* TasksListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksListCoordinator.swift; sourceTree = "<group>"; };
+		74E4CA18257198F8008A4BA4 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		74E4CA1B25719C34008A4BA4 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		74E4CA2925719E12008A4BA4 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		7679BCC835A196F154C404AC /* Pods_TalkyFoxy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TalkyFoxy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6B3F53FD46B58F0FB419C32 /* Pods-TalkyFoxy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TalkyFoxy.release.xcconfig"; path = "Target Support Files/Pods-TalkyFoxy/Pods-TalkyFoxy.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -44,8 +60,49 @@
 				43F2DF08F3B170C6E599B599 /* Pods-TalkyFoxy.debug.xcconfig */,
 				A6B3F53FD46B58F0FB419C32 /* Pods-TalkyFoxy.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		7421C0522571A00B0060F35F /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				74E4C9FC25719299008A4BA4 /* Info.plist */,
+				74E4C9F725719299008A4BA4 /* Assets.xcassets */,
+				74E4C9F925719299008A4BA4 /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting files";
+			sourceTree = "<group>";
+		};
+		7421C0542571A25C0060F35F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				7421C0552571A2620060F35F /* Api */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		7421C0552571A2620060F35F /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				7421C0562571A2870060F35F /* ApiService.swift */,
+				7421C0592571A2CC0060F35F /* ApiRequest.swift */,
+				7421C05C2571A2F50060F35F /* ApiError.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		7421C05F2571A32F0060F35F /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		7421C0602571A3370060F35F /* DTOs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DTOs;
 			sourceTree = "<group>";
 		};
 		74E4C9E225719295008A4BA4 = {
@@ -69,13 +126,35 @@
 		74E4C9ED25719295008A4BA4 /* TalkyFoxy */ = {
 			isa = PBXGroup;
 			children = (
+				7421C0602571A3370060F35F /* DTOs */,
+				7421C05F2571A32F0060F35F /* Entities */,
+				7421C0542571A25C0060F35F /* Services */,
+				74E4CA0C2571975F008A4BA4 /* Modules */,
+				7421C0522571A00B0060F35F /* Supporting files */,
 				74E4C9EE25719295008A4BA4 /* AppDelegate.swift */,
-				74E4C9F225719295008A4BA4 /* ViewController.swift */,
-				74E4C9F725719299008A4BA4 /* Assets.xcassets */,
-				74E4C9F925719299008A4BA4 /* LaunchScreen.storyboard */,
-				74E4C9FC25719299008A4BA4 /* Info.plist */,
+				74E4CA18257198F8008A4BA4 /* AppCoordinator.swift */,
+				74E4CA1B25719C34008A4BA4 /* Coordinator.swift */,
+				74E4CA2925719E12008A4BA4 /* ViewModel.swift */,
 			);
 			path = TalkyFoxy;
+			sourceTree = "<group>";
+		};
+		74E4CA0C2571975F008A4BA4 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				74E4CA0D25719769008A4BA4 /* TasksList */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		74E4CA0D25719769008A4BA4 /* TasksList */ = {
+			isa = PBXGroup;
+			children = (
+				74E4CA0F2571979F008A4BA4 /* TasksListView.swift */,
+				74E4CA12257197AD008A4BA4 /* TasksListViewModel.swift */,
+				74E4CA15257197B9008A4BA4 /* TasksListCoordinator.swift */,
+			);
+			path = TasksList;
 			sourceTree = "<group>";
 		};
 		EB02B9100143BAEE9EA6253A /* Frameworks */ = {
@@ -97,7 +176,7 @@
 				74E4C9E725719295008A4BA4 /* Sources */,
 				74E4C9E825719295008A4BA4 /* Frameworks */,
 				74E4C9E925719295008A4BA4 /* Resources */,
-				D35956A72B8703E6F99118B0 /* [CP] Embed Pods Frameworks */,
+				93EB723FF3FAE167FE2070ED /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -153,7 +232,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		D35956A72B8703E6F99118B0 /* [CP] Embed Pods Frameworks */ = {
+		93EB723FF3FAE167FE2070ED /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -199,8 +278,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				74E4C9F325719295008A4BA4 /* ViewController.swift in Sources */,
+				74E4CA19257198F8008A4BA4 /* AppCoordinator.swift in Sources */,
+				74E4CA102571979F008A4BA4 /* TasksListView.swift in Sources */,
+				74E4CA13257197AD008A4BA4 /* TasksListViewModel.swift in Sources */,
+				7421C05D2571A2F50060F35F /* ApiError.swift in Sources */,
 				74E4C9EF25719295008A4BA4 /* AppDelegate.swift in Sources */,
+				74E4CA16257197B9008A4BA4 /* TasksListCoordinator.swift in Sources */,
+				7421C05A2571A2CC0060F35F /* ApiRequest.swift in Sources */,
+				74E4CA1C25719C34008A4BA4 /* Coordinator.swift in Sources */,
+				7421C0572571A2870060F35F /* ApiService.swift in Sources */,
+				74E4CA2A25719E12008A4BA4 /* ViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,7 +428,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = TalkyFoxy/Info.plist;
+				INFOPLIST_FILE = "TalkyFoxy/Supporting files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -361,7 +448,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = TalkyFoxy/Info.plist;
+				INFOPLIST_FILE = "TalkyFoxy/Supporting files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

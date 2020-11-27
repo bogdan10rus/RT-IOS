@@ -5,18 +5,25 @@
 //  Created by Egor on 27.11.2020.
 //
 
-import UIKit
+import RxSwift
+import SnapKit
 
-@main
+@UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    private var appCoordinator: AppCoordinator!
+    private let disposeBag = DisposeBag()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        // Override point for customization after application launch.
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = ViewController()
-        window?.makeKeyAndVisible()
+        
+        appCoordinator = AppCoordinator(window: window!)
+        appCoordinator.start()
+            .subscribe()
+            .disposed(by: disposeBag)
         
         return true
     }
