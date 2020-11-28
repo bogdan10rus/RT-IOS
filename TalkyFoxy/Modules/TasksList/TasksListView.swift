@@ -12,6 +12,8 @@ class TasksListView: UIViewController {
     
     private let viewModel: TasksListViewModel
     
+    var callManager: CallManager!
+    
     init (viewModel: TasksListViewModel) {
         self.viewModel = viewModel
         
@@ -28,7 +30,25 @@ class TasksListView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        callManager = AppDelegate.shared.callManager
+        
+        callManager.endHandler = { [weak self] in
+            guard let self = self else { return }
+            self.navigationController?.present(ChatView(viewModel: ChatViewModel()), animated: true)
+        }
+        
         view.backgroundColor = .white
-    }
+        
+        let backgroundTaskIdentifier =
+            UIApplication.shared.beginBackgroundTask(expirationHandler: nil)
 
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            AppDelegate.shared.displayIncomingCall(
+                uuid: UUID()
+            ) { _ in
+                UIApplication.shared.endBackgroundTask(backgroundTaskIdentifier)
+            }
+        }
+    }
+    
 }
