@@ -12,11 +12,21 @@ import SnapKit
 class ChatView: UIViewController {
     
     private let viewModel: ChatViewModel
+    private let disposeBag = DisposeBag()
     
-    let tableView = UITableView()
-    var messages : [Message] = [Message(sender: .bot, text: "Hi")]
+    private let messagesCellId = "messageCellId"
     
+    private let messagesTableView: UITableView = {
+        let tableView = UITableView()
+        tableView.backgroundColor = .clear
+        tableView.separatorStyle = .none
+        tableView.allowsSelection = false
+        tableView.transform = CGAffineTransform(scaleX: 1, y: -1)
+        
+        return tableView
+    }()
     
+    //var messages : [Message] = [Message(sender: .bot, text: "Hi")]
     
     init (viewModel: ChatViewModel) {
         self.viewModel = viewModel
@@ -26,7 +36,7 @@ class ChatView: UIViewController {
         title = "Чат"
         tabBarItem.title = title
         
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        messagesTableView.register(MessageCell.self, forCellReuseIdentifier: messagesCellId)
     }
     
     required init?(coder: NSCoder) {
@@ -36,69 +46,32 @@ class ChatView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .white
+        view.backgroundColor = #colorLiteral(red: 0.1137254902, green: 0.1137254902, blue: 0.1490196078, alpha: 1)
         
-        tableView.dataSource = self
-        
-        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
-        view.addGestureRecognizer(tap)
+        setupViews()
+        setupLayout()
+        setupBindings()
     }
     
-    override func loadView() {
-        super.loadView()
-        setupTableView()
-      }
-}
-
-extension ChatView: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return messages.count
+    private func setupViews() {
+        view.addSubview(messagesTableView)
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        let message = messages[indexPath.row]
-        cell.textLabel?.text = message.text
-        cell.textLabel?.textAlignment = message.sender == .bot ? .left : .right
-        cell.transform = CGAffineTransform(scaleX: 1, y: -1)
-        return cell
+    private func setupLayout() {
+        messagesTableView.snp.makeConstraints { $0.edges.equalTo(view.safeAreaLayoutGuide) }
     }
     
-}
-
-
-extension ChatView {
-    func setupTableView(){
-        
-        tableView.separatorStyle = .none
-        tableView.allowsSelection = false
-        tableView.transform = CGAffineTransform(scaleX: 1, y: -1)
-        
-        view.addSubview(tableView)
-        
-        tableView.snp.makeConstraints { (make) -> Void in
-            make.edges.equalTo(view)
-        }
+    private func setupBindings() {
+        viewModel.output.messages
+            .drive(messagesTableView.rx.items) { [unowned self] tableView, index, message in
+                let indexPath = IndexPath(row: index, section: 0)
+                
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: messagesCellId, for: indexPath) as? MessageCell else { return UITableViewCell() }
+                
+                cell.setup(with: message)
+                cell.transform = CGAffineTransform(scaleX: 1, y: -1)
+                return cell
+            }
+            .disposed(by: disposeBag)
     }
-    
-    @objc func handleTap(_ sender: UITapGestureRecognizer? = nil){
-        let author: Sender = Int.random(in: 0...1) == 0 ? .bot : .user
-        self.messages.insert(Message(sender: author, text: "New message"), at: 0)
-        self.tableView.reloadData()
-    }
-}
-
-struct Message {
-    let sender: Sender
-    let text: String
-    
-    init(sender: Sender, text: String) {
-        self.sender = sender
-        self.text = text
-    }
-}
-
-enum Sender {
-    case bot
-    case user
 }

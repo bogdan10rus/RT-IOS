@@ -14,6 +14,8 @@
 		7421C0632571AD330060F35F /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7421C0622571AD330060F35F /* TaskCell.swift */; };
 		7421C0662571B1E30060F35F /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7421C0652571B1E30060F35F /* Task.swift */; };
 		7421C078257235AD0060F35F /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7421C077257235AD0060F35F /* SpeechRecognizer.swift */; };
+		7421C07E257242600060F35F /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7421C07D257242600060F35F /* Message.swift */; };
+		7421C087257244A00060F35F /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7421C086257244A00060F35F /* MessageCell.swift */; };
 		74E4C9EF25719295008A4BA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E4C9EE25719295008A4BA4 /* AppDelegate.swift */; };
 		74E4C9F825719299008A4BA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74E4C9F725719299008A4BA4 /* Assets.xcassets */; };
 		74E4C9FB25719299008A4BA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74E4C9F925719299008A4BA4 /* LaunchScreen.storyboard */; };
@@ -47,6 +49,8 @@
 		7421C0622571AD330060F35F /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		7421C0652571B1E30060F35F /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		7421C077257235AD0060F35F /* SpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizer.swift; sourceTree = "<group>"; };
+		7421C07D257242600060F35F /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		7421C086257244A00060F35F /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		74E4C9EB25719295008A4BA4 /* TalkyFoxy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TalkyFoxy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74E4C9EE25719295008A4BA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74E4C9F725719299008A4BA4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -130,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				7421C0652571B1E30060F35F /* Task.swift */,
+				7421C07D257242600060F35F /* Message.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -155,6 +160,14 @@
 				7421C077257235AD0060F35F /* SpeechRecognizer.swift */,
 			);
 			path = Speech;
+			sourceTree = "<group>";
+		};
+		7421C085257244810060F35F /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				7421C086257244A00060F35F /* MessageCell.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		74E4C9E225719295008A4BA4 = {
@@ -249,6 +262,7 @@
 		A20AA6E12571CD9D006C84AA /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				7421C085257244810060F35F /* Components */,
 				A20AA6E22571CDB7006C84AA /* ChatCoordinator.swift */,
 				A20AA6E52571CDC5006C84AA /* ChatView.swift */,
 				A20AA6E82571CDD2006C84AA /* ChatViewModel.swift */,
@@ -390,10 +404,12 @@
 				A20AA6CE2571B74A006C84AA /* ProfileCoordinator.swift in Sources */,
 				A20AA6BB2571B5E0006C84AA /* BotCoordinator.swift in Sources */,
 				A20AA6B52571AB51006C84AA /* DictionaryView.swift in Sources */,
+				7421C07E257242600060F35F /* Message.swift in Sources */,
 				7421C05D2571A2F50060F35F /* ApiError.swift in Sources */,
 				7421C0662571B1E30060F35F /* Task.swift in Sources */,
 				74E4C9EF25719295008A4BA4 /* AppDelegate.swift in Sources */,
 				74E4CA16257197B9008A4BA4 /* TasksListCoordinator.swift in Sources */,
+				7421C087257244A00060F35F /* MessageCell.swift in Sources */,
 				A20AA6D12571B758006C84AA /* ProfileView.swift in Sources */,
 				7421C05A2571A2CC0060F35F /* ApiRequest.swift in Sources */,
 				7421C0632571AD330060F35F /* TaskCell.swift in Sources */,
@@ -544,6 +560,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "TalkyFoxy/Supporting files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -564,6 +581,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "TalkyFoxy/Supporting files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
