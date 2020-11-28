@@ -42,7 +42,7 @@ class ProviderDelegate: NSObject {
         
         provider.reportNewIncomingCall(with: uuid, update: update) { error in
             if error == nil {
-                
+                self.callManager.callid = uuid
             }
             
             completion?(error)

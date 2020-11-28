@@ -12,5 +12,6 @@ target 'TalkyFoxy' do
   pod 'ObjectMapper'
   pod 'RxAlamofire'
   pod 'Alamofire'
-  pod 'Kingfisher'  
+  pod 'Kingfisher'
+  pod 'IBMWatsonAssistantV1', '~> 3.6.0'
 end
