@@ -82,5 +82,9 @@ class TasksListView: UIViewController {
             .drive(onNext: { [unowned self] isLoading in
                 isLoading ? activityIndicator.startAnimating() : activityIndicator.stopAnimating()
             }).disposed(by: disposeBag)
+        
+        tasksTableView.rx.modelSelected(Task.self)
+            .bind(to: viewModel.input.selectedTask)
+            .disposed(by: disposeBag)
     }
 }

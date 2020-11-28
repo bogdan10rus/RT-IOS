@@ -18,6 +18,9 @@
 		7421C087257244A00060F35F /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7421C086257244A00060F35F /* MessageCell.swift */; };
 		7421C0A0257264880060F35F /* BotApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7421C09F257264880060F35F /* BotApiService.swift */; };
 		7421C0A72572834D0060F35F /* TaskObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7421C0A62572834D0060F35F /* TaskObject.swift */; };
+		7421C0B0257291FB0060F35F /* TaskResultObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7421C0AF257291FB0060F35F /* TaskResultObject.swift */; };
+		7421C0B3257296110060F35F /* TaskResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7421C0B2257296110060F35F /* TaskResult.swift */; };
+		7421C0BA25729CD70060F35F /* TaskDialogObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7421C0B925729CD60060F35F /* TaskDialogObject.swift */; };
 		74E4C9EF25719295008A4BA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E4C9EE25719295008A4BA4 /* AppDelegate.swift */; };
 		74E4C9F825719299008A4BA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74E4C9F725719299008A4BA4 /* Assets.xcassets */; };
 		74E4C9FB25719299008A4BA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74E4C9F925719299008A4BA4 /* LaunchScreen.storyboard */; };
@@ -60,6 +63,9 @@
 		7421C086257244A00060F35F /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		7421C09F257264880060F35F /* BotApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotApiService.swift; sourceTree = "<group>"; };
 		7421C0A62572834D0060F35F /* TaskObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskObject.swift; sourceTree = "<group>"; };
+		7421C0AF257291FB0060F35F /* TaskResultObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskResultObject.swift; sourceTree = "<group>"; };
+		7421C0B2257296110060F35F /* TaskResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskResult.swift; sourceTree = "<group>"; };
+		7421C0B925729CD60060F35F /* TaskDialogObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDialogObject.swift; sourceTree = "<group>"; };
 		74E4C9EB25719295008A4BA4 /* TalkyFoxy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TalkyFoxy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74E4C9EE25719295008A4BA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74E4C9F725719299008A4BA4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -150,6 +156,7 @@
 			children = (
 				7421C0652571B1E30060F35F /* Task.swift */,
 				7421C07D257242600060F35F /* Message.swift */,
+				7421C0B2257296110060F35F /* TaskResult.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -158,6 +165,8 @@
 			isa = PBXGroup;
 			children = (
 				7421C0A62572834D0060F35F /* TaskObject.swift */,
+				7421C0AF257291FB0060F35F /* TaskResultObject.swift */,
+				7421C0B925729CD60060F35F /* TaskDialogObject.swift */,
 			);
 			path = DTOs;
 			sourceTree = "<group>";
@@ -452,7 +461,9 @@
 				7421C078257235AD0060F35F /* SpeechRecognizer.swift in Sources */,
 				A20AA6E62571CDC5006C84AA /* ChatView.swift in Sources */,
 				7421C0A72572834D0060F35F /* TaskObject.swift in Sources */,
+				7421C0B0257291FB0060F35F /* TaskResultObject.swift in Sources */,
 				74E4CA102571979F008A4BA4 /* TasksListView.swift in Sources */,
+				7421C0B3257296110060F35F /* TaskResult.swift in Sources */,
 				A20AA6E92571CDD2006C84AA /* ChatViewModel.swift in Sources */,
 				74E4CA13257197AD008A4BA4 /* TasksListViewModel.swift in Sources */,
 				A20AA6CE2571B74A006C84AA /* ProfileCoordinator.swift in Sources */,
@@ -461,6 +472,7 @@
 				7421C07E257242600060F35F /* Message.swift in Sources */,
 				7421C05D2571A2F50060F35F /* ApiError.swift in Sources */,
 				A2206D0E257279E400D5D74C /* TaskResultViewModel.swift in Sources */,
+				7421C0BA25729CD70060F35F /* TaskDialogObject.swift in Sources */,
 				7421C0662571B1E30060F35F /* Task.swift in Sources */,
 				74E4C9EF25719295008A4BA4 /* AppDelegate.swift in Sources */,
 				A2206D1225727C6D00D5D74C /* ProgressBar.swift in Sources */,

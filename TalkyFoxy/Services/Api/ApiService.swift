@@ -12,12 +12,18 @@ import ObjectMapper
 
 protocol ApiServiceProtocol {
     func getTasksList() -> Observable<[TaskObject]>
+    func postTaskDialog(dialog: TaskDialogObject) -> Observable<TaskResultObject>
 }
 
 class ApiService: BaseApiService, ApiServiceProtocol {
     func getTasksList() -> Observable<[TaskObject]> {
         let request = ApiRequest(path: baseURL + "tasks")
         return callAPIRequest(request: request)
+    }
+    
+    func postTaskDialog(dialog: TaskDialogObject) -> Observable<TaskResultObject> {
+        let request = ApiRequest(method: .post, path: baseURL + "dialogs", parameters: dialog.toJSON())
+        return callAPIRequest(request: request).debug()
     }
 }
 
@@ -33,6 +39,7 @@ class BaseApiService {
                 return .just(model)
             }
     }
+    
     
     fileprivate func callAPIRequest<T: BaseMappable>(request: ApiRequest) -> Observable<[T]> {
         RxAlamofire.requestJSON(request.method, request.path, parameters: request.parameters, encoding: request.encoding, headers: request.headers)

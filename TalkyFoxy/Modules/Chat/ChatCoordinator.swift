@@ -7,25 +7,26 @@
 
 import RxSwift
 
-class ChatCoordinator: Coordinator<Void> {
+class ChatCoordinator: Coordinator<TaskResult> {
     let navigationController: UINavigationController
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
     
-    override func start() -> Observable<Void> {
+    override func start() -> Observable<TaskResult> {
         let viewModel = ChatViewModel()
         let viewController = ChatView(viewModel: viewModel)
         
         navigationController.present(viewController, animated: true, completion: nil)
         
-        viewModel.endCallButtonTapSubject.subscribe(onNext: {
-            viewController.dismiss(animated: true, completion: nil)
-        }).disposed(by: disposeBag)
+        viewModel.openResultScreenSubject
+            .subscribe(onNext: { result in
+                viewController.dismiss(animated: true, completion: nil)
+            }).disposed(by: disposeBag)
         
         return viewModel
-            .endCallButtonTapSubject
+            .openResultScreenSubject
             .take(1)
     }
 }

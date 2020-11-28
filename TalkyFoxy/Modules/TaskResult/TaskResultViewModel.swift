@@ -8,6 +8,7 @@
 import RxSwift
 
 class TaskResultViewModel: ViewModel {
+    private let result: TaskResult
     struct Input {
         
     }
@@ -20,7 +21,8 @@ class TaskResultViewModel: ViewModel {
     
     let output: Output
     
-    init() {
+    init(result: TaskResult) {
+        self.result = result
         input = Input()
         output = Output()
     }

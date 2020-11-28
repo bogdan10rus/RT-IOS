@@ -12,6 +12,7 @@ class ChatViewModel: ViewModel {
     private let disposeBag = DisposeBag()
     private let speechRecognizer = SpeechRecognizer()
     private let botService = BotApiService()
+    private let apiService = ApiService()
     
     struct Input {
         let viewDidAppear: AnyObserver<Void>
@@ -21,7 +22,8 @@ class ChatViewModel: ViewModel {
     let input: Input
     
     private let viewDidAppearSubject = PublishSubject<Void>()
-    let endCallButtonTapSubject = PublishSubject<Void>()
+    private let endCallButtonTapSubject = PublishSubject<Void>()
+    let openResultScreenSubject = PublishSubject<TaskResult>()
     
     struct Output {
         let messages: Driver<[Message]>
@@ -76,10 +78,19 @@ class ChatViewModel: ViewModel {
             .disposed(by: disposeBag)
         
         endCallButtonTapSubject
-            .subscribe(onNext: { [unowned self] in
+            .flatMap { [unowned self] _  -> Observable<TaskResultObject> in
                 speechRecognizer.stopListening()
                 speechRecognizer.stopSpeaking()
-            })
+                
+                let messages = (try? messagesSubject.value()) ?? []
+                
+                return apiService.postTaskDialog(dialog: TaskDialogObject(userId: 1, taskId: 3, messages: messages))
+            }
+            .debug()
+            .flatMap { taskResultObject  -> Observable<TaskResult> in
+                .just(TaskResult(from: taskResultObject))
+            }
+            .bind(to: openResultScreenSubject)
             .disposed(by: disposeBag)
     }
 }
