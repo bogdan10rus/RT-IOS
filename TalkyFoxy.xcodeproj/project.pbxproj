@@ -20,6 +20,20 @@
 		74E4CA19257198F8008A4BA4 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E4CA18257198F8008A4BA4 /* AppCoordinator.swift */; };
 		74E4CA1C25719C34008A4BA4 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E4CA1B25719C34008A4BA4 /* Coordinator.swift */; };
 		74E4CA2A25719E12008A4BA4 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E4CA2925719E12008A4BA4 /* ViewModel.swift */; };
+		A20AA6B42571AB51006C84AA /* DictionaryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20AA6B12571AB50006C84AA /* DictionaryCoordinator.swift */; };
+		A20AA6B52571AB51006C84AA /* DictionaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20AA6B22571AB50006C84AA /* DictionaryView.swift */; };
+		A20AA6B62571AB51006C84AA /* DictionaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20AA6B32571AB51006C84AA /* DictionaryViewModel.swift */; };
+		A20AA6BB2571B5E0006C84AA /* BotCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20AA6BA2571B5E0006C84AA /* BotCoordinator.swift */; };
+		A20AA6C82571B6C5006C84AA /* BotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20AA6C72571B6C5006C84AA /* BotView.swift */; };
+		A20AA6CB2571B6D3006C84AA /* BotViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20AA6CA2571B6D3006C84AA /* BotViewModel.swift */; };
+		A20AA6CE2571B74A006C84AA /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20AA6CD2571B74A006C84AA /* ProfileCoordinator.swift */; };
+		A20AA6D12571B758006C84AA /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20AA6D02571B758006C84AA /* ProfileView.swift */; };
+		A20AA6D42571B769006C84AA /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20AA6D32571B769006C84AA /* ProfileViewModel.swift */; };
+		A20AA6D72571C040006C84AA /* ProviderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20AA6D62571C040006C84AA /* ProviderDelegate.swift */; };
+		A20AA6E32571CDB7006C84AA /* ChatCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20AA6E22571CDB7006C84AA /* ChatCoordinator.swift */; };
+		A20AA6E62571CDC5006C84AA /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20AA6E52571CDC5006C84AA /* ChatView.swift */; };
+		A20AA6E92571CDD2006C84AA /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20AA6E82571CDD2006C84AA /* ChatViewModel.swift */; };
+		A20AA6EC2571E4F5006C84AA /* CallManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20AA6EB2571E4F5006C84AA /* CallManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +53,20 @@
 		74E4CA1B25719C34008A4BA4 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		74E4CA2925719E12008A4BA4 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		7679BCC835A196F154C404AC /* Pods_TalkyFoxy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TalkyFoxy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A20AA6B12571AB50006C84AA /* DictionaryCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryCoordinator.swift; sourceTree = "<group>"; };
+		A20AA6B22571AB50006C84AA /* DictionaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryView.swift; sourceTree = "<group>"; };
+		A20AA6B32571AB51006C84AA /* DictionaryViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryViewModel.swift; sourceTree = "<group>"; };
+		A20AA6BA2571B5E0006C84AA /* BotCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotCoordinator.swift; sourceTree = "<group>"; };
+		A20AA6C72571B6C5006C84AA /* BotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotView.swift; sourceTree = "<group>"; };
+		A20AA6CA2571B6D3006C84AA /* BotViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotViewModel.swift; sourceTree = "<group>"; };
+		A20AA6CD2571B74A006C84AA /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
+		A20AA6D02571B758006C84AA /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		A20AA6D32571B769006C84AA /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		A20AA6D62571C040006C84AA /* ProviderDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderDelegate.swift; sourceTree = "<group>"; };
+		A20AA6E22571CDB7006C84AA /* ChatCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCoordinator.swift; sourceTree = "<group>"; };
+		A20AA6E52571CDC5006C84AA /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		A20AA6E82571CDD2006C84AA /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		A20AA6EB2571E4F5006C84AA /* CallManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallManager.swift; sourceTree = "<group>"; };
 		A6B3F53FD46B58F0FB419C32 /* Pods-TalkyFoxy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TalkyFoxy.release.xcconfig"; path = "Target Support Files/Pods-TalkyFoxy/Pods-TalkyFoxy.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -135,6 +163,8 @@
 				74E4CA18257198F8008A4BA4 /* AppCoordinator.swift */,
 				74E4CA1B25719C34008A4BA4 /* Coordinator.swift */,
 				74E4CA2925719E12008A4BA4 /* ViewModel.swift */,
+				A20AA6D62571C040006C84AA /* ProviderDelegate.swift */,
+				A20AA6EB2571E4F5006C84AA /* CallManager.swift */,
 			);
 			path = TalkyFoxy;
 			sourceTree = "<group>";
@@ -142,6 +172,10 @@
 		74E4CA0C2571975F008A4BA4 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				A20AA6E12571CD9D006C84AA /* Chat */,
+				A20AA6B92571B5A7006C84AA /* Bot */,
+				A20AA6B82571B5A4006C84AA /* Profile */,
+				A20AA6B02571AAC7006C84AA /* Dictionary */,
 				74E4CA0D25719769008A4BA4 /* TasksList */,
 			);
 			path = Modules;
@@ -155,6 +189,46 @@
 				74E4CA15257197B9008A4BA4 /* TasksListCoordinator.swift */,
 			);
 			path = TasksList;
+			sourceTree = "<group>";
+		};
+		A20AA6B02571AAC7006C84AA /* Dictionary */ = {
+			isa = PBXGroup;
+			children = (
+				A20AA6B12571AB50006C84AA /* DictionaryCoordinator.swift */,
+				A20AA6B22571AB50006C84AA /* DictionaryView.swift */,
+				A20AA6B32571AB51006C84AA /* DictionaryViewModel.swift */,
+			);
+			path = Dictionary;
+			sourceTree = "<group>";
+		};
+		A20AA6B82571B5A4006C84AA /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				A20AA6CD2571B74A006C84AA /* ProfileCoordinator.swift */,
+				A20AA6D02571B758006C84AA /* ProfileView.swift */,
+				A20AA6D32571B769006C84AA /* ProfileViewModel.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		A20AA6B92571B5A7006C84AA /* Bot */ = {
+			isa = PBXGroup;
+			children = (
+				A20AA6BA2571B5E0006C84AA /* BotCoordinator.swift */,
+				A20AA6C72571B6C5006C84AA /* BotView.swift */,
+				A20AA6CA2571B6D3006C84AA /* BotViewModel.swift */,
+			);
+			path = Bot;
+			sourceTree = "<group>";
+		};
+		A20AA6E12571CD9D006C84AA /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				A20AA6E22571CDB7006C84AA /* ChatCoordinator.swift */,
+				A20AA6E52571CDC5006C84AA /* ChatView.swift */,
+				A20AA6E82571CDD2006C84AA /* ChatViewModel.swift */,
+			);
+			path = Chat;
 			sourceTree = "<group>";
 		};
 		EB02B9100143BAEE9EA6253A /* Frameworks */ = {
@@ -278,16 +352,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A20AA6B42571AB51006C84AA /* DictionaryCoordinator.swift in Sources */,
+				A20AA6D42571B769006C84AA /* ProfileViewModel.swift in Sources */,
+				A20AA6E32571CDB7006C84AA /* ChatCoordinator.swift in Sources */,
+				A20AA6EC2571E4F5006C84AA /* CallManager.swift in Sources */,
 				74E4CA19257198F8008A4BA4 /* AppCoordinator.swift in Sources */,
+				A20AA6E62571CDC5006C84AA /* ChatView.swift in Sources */,
 				74E4CA102571979F008A4BA4 /* TasksListView.swift in Sources */,
+				A20AA6E92571CDD2006C84AA /* ChatViewModel.swift in Sources */,
 				74E4CA13257197AD008A4BA4 /* TasksListViewModel.swift in Sources */,
+				A20AA6CE2571B74A006C84AA /* ProfileCoordinator.swift in Sources */,
+				A20AA6BB2571B5E0006C84AA /* BotCoordinator.swift in Sources */,
+				A20AA6B52571AB51006C84AA /* DictionaryView.swift in Sources */,
 				7421C05D2571A2F50060F35F /* ApiError.swift in Sources */,
 				74E4C9EF25719295008A4BA4 /* AppDelegate.swift in Sources */,
 				74E4CA16257197B9008A4BA4 /* TasksListCoordinator.swift in Sources */,
+				A20AA6D12571B758006C84AA /* ProfileView.swift in Sources */,
 				7421C05A2571A2CC0060F35F /* ApiRequest.swift in Sources */,
 				74E4CA1C25719C34008A4BA4 /* Coordinator.swift in Sources */,
+				A20AA6C82571B6C5006C84AA /* BotView.swift in Sources */,
 				7421C0572571A2870060F35F /* ApiService.swift in Sources */,
+				A20AA6B62571AB51006C84AA /* DictionaryViewModel.swift in Sources */,
+				A20AA6CB2571B6D3006C84AA /* BotViewModel.swift in Sources */,
 				74E4CA2A25719E12008A4BA4 /* ViewModel.swift in Sources */,
+				A20AA6D72571C040006C84AA /* ProviderDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
