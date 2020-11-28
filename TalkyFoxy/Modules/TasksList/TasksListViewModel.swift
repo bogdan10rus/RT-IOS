@@ -10,6 +10,8 @@ import RxCocoa
 
 class TasksListViewModel: ViewModel {
     private let callManager = AppDelegate.shared.callManager
+    private let apiService = ApiService()
+    private let disposeBag = DisposeBag()
     
     struct Input {
         let selectedTask: AnyObserver<Task>
@@ -42,30 +44,23 @@ class TasksListViewModel: ViewModel {
         output = Output(tasks: tasks, isLoading: isLoading)
         
         isLoadingSubject.onNext(true)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3.5) {
-            self.tasksSubject.onNext([
-                .init(id: 0, name: "Task 1", time: "7pm"),
-                .init(id: 1, name: "Task 2", time: "7 - 9pm"),
-                .init(id: 2, name: "Task 3", time: "3pm"),
-                .init(id: 3, name: "Task 4", time: "2pm"),
-                .init(id: 4, name: "Task 5", time: "1pm"),
-                .init(id: 5, name: "Task 6", time: "10pm"),
-                .init(id: 6, name: "Task 1", time: "7pm"),
-                .init(id: 7, name: "Task 2", time: "7 - 9pm"),
-                .init(id: 8, name: "Task 3", time: "3pm"),
-                .init(id: 9, name: "Task 4", time: "2pm"),
-                .init(id: 10, name: "Task 5", time: "1pm"),
-                .init(id: 11, name: "Task 6", time: "10pm"),
-            ])
-            
-            self.isLoadingSubject.onNext(false)
-        }
+        apiService.getTasksList()
+            .flatMap { [unowned self] objects -> Observable<[Task]> in
+                isLoadingSubject.onNext(false)
+                return prepareTasks(from: objects)
+            }
+            .bind(to: tasksSubject)
+            .disposed(by: disposeBag)
         
         setupCallManager()
     }
 }
 
 private extension TasksListViewModel {
+    func prepareTasks(from objects: [TaskObject]) -> Observable<[Task]> {
+        return .just(objects.map { Task(from: $0) })
+    }
+    
     func setupCallManager() {
         
         callManager.endHandler = { [weak self] in

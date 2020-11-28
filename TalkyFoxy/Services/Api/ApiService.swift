@@ -11,15 +11,18 @@ import RxAlamofire
 import ObjectMapper
 
 protocol ApiServiceProtocol {
-    
+    func getTasksList() -> Observable<[TaskObject]>
 }
 
 class ApiService: BaseApiService, ApiServiceProtocol {
-    
+    func getTasksList() -> Observable<[TaskObject]> {
+        let request = ApiRequest(path: baseURL + "tasks")
+        return callAPIRequest(request: request)
+    }
 }
 
 class BaseApiService {
-    private let baseURL = "ВСТАВИТЬ УРЛ"
+    fileprivate let baseURL = "https://rt.sysdyn.ru/api/"
 
     fileprivate func callAPIRequest<T: BaseMappable>(request: ApiRequest) -> Observable<T> {
         RxAlamofire.requestJSON(request.method, request.path, parameters: request.parameters, encoding: request.encoding, headers: request.headers)

@@ -108,8 +108,8 @@ class TaskCell: UITableViewCell {
     func setup(with task: Task) {
         self.task = task
         
-        timeLabel.text = task.time
-        titleLabel.text = task.name
+        timeLabel.text = task.category.titleRu
+        titleLabel.text = task.titleRu
     }
     
 }
