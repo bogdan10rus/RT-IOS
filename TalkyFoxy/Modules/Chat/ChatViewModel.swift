@@ -80,6 +80,8 @@ class ChatViewModel: ViewModel {
                 speechRecognizer.stopListening()
                 speechRecognizer.stopSpeaking()
                 
+                AppDelegate.shared.callManager.endCall()
+                
                 let messages = (try? messagesSubject.value()) ?? []
                 
                 return apiService.postTaskDialog(dialog: TaskDialogObject(userId: 1, taskId: 3, messages: messages.reversed()))
