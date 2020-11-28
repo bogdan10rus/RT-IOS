@@ -16,6 +16,7 @@
 		7421C078257235AD0060F35F /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7421C077257235AD0060F35F /* SpeechRecognizer.swift */; };
 		7421C07E257242600060F35F /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7421C07D257242600060F35F /* Message.swift */; };
 		7421C087257244A00060F35F /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7421C086257244A00060F35F /* MessageCell.swift */; };
+		7421C0A0257264880060F35F /* BotApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7421C09F257264880060F35F /* BotApiService.swift */; };
 		74E4C9EF25719295008A4BA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E4C9EE25719295008A4BA4 /* AppDelegate.swift */; };
 		74E4C9F825719299008A4BA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74E4C9F725719299008A4BA4 /* Assets.xcassets */; };
 		74E4C9FB25719299008A4BA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74E4C9F925719299008A4BA4 /* LaunchScreen.storyboard */; };
@@ -51,6 +52,7 @@
 		7421C077257235AD0060F35F /* SpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizer.swift; sourceTree = "<group>"; };
 		7421C07D257242600060F35F /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		7421C086257244A00060F35F /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
+		7421C09F257264880060F35F /* BotApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotApiService.swift; sourceTree = "<group>"; };
 		74E4C9EB25719295008A4BA4 /* TalkyFoxy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TalkyFoxy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74E4C9EE25719295008A4BA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74E4C9F725719299008A4BA4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 		7421C0542571A25C0060F35F /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				7421C09E2572644C0060F35F /* BotApi */,
 				7421C076257235110060F35F /* Speech */,
 				7421C0552571A2620060F35F /* Api */,
 			);
@@ -168,6 +171,14 @@
 				7421C086257244A00060F35F /* MessageCell.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		7421C09E2572644C0060F35F /* BotApi */ = {
+			isa = PBXGroup;
+			children = (
+				7421C09F257264880060F35F /* BotApiService.swift */,
+			);
+			path = BotApi;
 			sourceTree = "<group>";
 		};
 		74E4C9E225719295008A4BA4 = {
@@ -413,6 +424,7 @@
 				A20AA6D12571B758006C84AA /* ProfileView.swift in Sources */,
 				7421C05A2571A2CC0060F35F /* ApiRequest.swift in Sources */,
 				7421C0632571AD330060F35F /* TaskCell.swift in Sources */,
+				7421C0A0257264880060F35F /* BotApiService.swift in Sources */,
 				74E4CA1C25719C34008A4BA4 /* Coordinator.swift in Sources */,
 				A20AA6C82571B6C5006C84AA /* BotView.swift in Sources */,
 				7421C0572571A2870060F35F /* ApiService.swift in Sources */,

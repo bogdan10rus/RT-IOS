@@ -59,6 +59,10 @@ class SpeechRecognizer: NSObject {
         speechSynthesizer.speak(speechUtterance)
     }
     
+    func stopSpeaking() {
+        speechSynthesizer.stopSpeaking(at: .immediate)
+    }
+    
     func listen() {
         let node = audioEngine.inputNode
         let recordingFormat = node.outputFormat(forBus: 0)

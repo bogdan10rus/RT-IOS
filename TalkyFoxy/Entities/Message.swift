@@ -17,7 +17,7 @@ struct Message {
     }
 }
 
-enum Sender {
+enum Sender: Int {
     case bot
     case user
 }

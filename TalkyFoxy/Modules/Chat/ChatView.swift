@@ -59,22 +59,12 @@ class ChatView: UIViewController {
         setupViews()
         setupLayout()
         setupBindings()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
-        endCallBtn.addTarget(self, action: #selector(endCall), for: .touchUpInside)
-        
-        let authenticator = WatsonIAMAuthenticator(apiKey: "7lb1sAmrZdG2DvID4U3F1UYfAmI4LZUTNA_Y0E5hQdip")
-        let assistant = Assistant(version: "2020-04-01", authenticator: authenticator)
-        assistant.serviceURL = "https://api.eu-gb.assistant.watson.cloud.ibm.com/instances/ae397f84-1cba-462c-99ea-320eb62c2d0f"
-        
-        let input = MessageInput(text: "Hello")
-        
-        assistant.message(workspaceID: "777dc3d7-bd5b-4b10-b271-daa8985cd78c", input: input){
-            (response, error) in
-            self.messages.insert(Message(sender: .bot, text: response?.result?.output.text[0] ?? "I don`t understand you"), at: 0)
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
+        viewModel.input.viewDidAppear.onNext(())
     }
     
     private func setupViews() {
@@ -83,12 +73,15 @@ class ChatView: UIViewController {
     }
     
     private func setupLayout() {
-        messagesTableView.snp.makeConstraints { $0.edges.equalTo(view.safeAreaLayoutGuide) }
+        messagesTableView.snp.makeConstraints { make in
+            make.leading.trailing.top.equalTo(view.safeAreaLayoutGuide)
+        }
         
         endCallBtn.snp.makeConstraints { make in
-            make.bottom.left.right.equalTo(view)
-            make.bottom.height.equalTo(100)
-            make.top.equalTo(tableView.snp.bottom)
+            make.top.equalTo(messagesTableView.snp.bottom)
+            make.height.equalTo(100)
+            make.leading.trailing.equalToSuperview()
+            make.bottom.equalTo(view)
         }
     }
     
@@ -103,6 +96,10 @@ class ChatView: UIViewController {
                 cell.transform = CGAffineTransform(scaleX: 1, y: -1)
                 return cell
             }
+            .disposed(by: disposeBag)
+        
+        endCallBtn.rx.tap
+            .bind(to: viewModel.input.endCallButtonTap)
             .disposed(by: disposeBag)
     }
 }
