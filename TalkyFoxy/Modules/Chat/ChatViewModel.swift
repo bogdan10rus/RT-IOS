@@ -8,6 +8,8 @@
 import RxSwift
 
 class ChatViewModel: ViewModel {
+    private let speechRecognizer = SpeechRecognizer()
+    
     struct Input {
         
     }
@@ -23,5 +25,9 @@ class ChatViewModel: ViewModel {
     init() {
         input = Input()
         output = Output()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
+            self?.speechRecognizer.speak(text: "Hi!")
+        }
     }
 }
