@@ -30,6 +30,7 @@
 		74E4CA19257198F8008A4BA4 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E4CA18257198F8008A4BA4 /* AppCoordinator.swift */; };
 		74E4CA1C25719C34008A4BA4 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E4CA1B25719C34008A4BA4 /* Coordinator.swift */; };
 		74E4CA2A25719E12008A4BA4 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E4CA2925719E12008A4BA4 /* ViewModel.swift */; };
+		A209F3A625729491002DAF48 /* ProgressItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209F3A525729491002DAF48 /* ProgressItem.swift */; };
 		A20AA6B42571AB51006C84AA /* DictionaryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20AA6B12571AB50006C84AA /* DictionaryCoordinator.swift */; };
 		A20AA6B52571AB51006C84AA /* DictionaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20AA6B22571AB50006C84AA /* DictionaryView.swift */; };
 		A20AA6B62571AB51006C84AA /* DictionaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20AA6B32571AB51006C84AA /* DictionaryViewModel.swift */; };
@@ -78,6 +79,7 @@
 		74E4CA1B25719C34008A4BA4 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		74E4CA2925719E12008A4BA4 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		7679BCC835A196F154C404AC /* Pods_TalkyFoxy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TalkyFoxy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A209F3A525729491002DAF48 /* ProgressItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressItem.swift; sourceTree = "<group>"; };
 		A20AA6B12571AB50006C84AA /* DictionaryCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryCoordinator.swift; sourceTree = "<group>"; };
 		A20AA6B22571AB50006C84AA /* DictionaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryView.swift; sourceTree = "<group>"; };
 		A20AA6B32571AB51006C84AA /* DictionaryViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryViewModel.swift; sourceTree = "<group>"; };
@@ -320,6 +322,7 @@
 			isa = PBXGroup;
 			children = (
 				A2206D1125727C6D00D5D74C /* ProgressBar.swift */,
+				A209F3A525729491002DAF48 /* ProgressItem.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -486,6 +489,7 @@
 				74E4CA1C25719C34008A4BA4 /* Coordinator.swift in Sources */,
 				A20AA6C82571B6C5006C84AA /* BotView.swift in Sources */,
 				7421C0572571A2870060F35F /* ApiService.swift in Sources */,
+				A209F3A625729491002DAF48 /* ProgressItem.swift in Sources */,
 				A2206D08257279C800D5D74C /* TaskResultCoordinator.swift in Sources */,
 				A20AA6B62571AB51006C84AA /* DictionaryViewModel.swift in Sources */,
 				A2206D0B257279DA00D5D74C /* TaskResultView.swift in Sources */,
