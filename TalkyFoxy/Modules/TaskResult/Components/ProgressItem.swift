@@ -23,7 +23,7 @@ class ProgressItem: UIView {
     
     private let progressLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 50, weight: .light)
+        label.font = .systemFont(ofSize: 40, weight: .light)
         label.textColor = .white
         label.numberOfLines = 0
         return label
@@ -31,8 +31,9 @@ class ProgressItem: UIView {
     
     private let progressTitle: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 17, weight: .light)
+        label.font = .systemFont(ofSize: 15, weight: .light)
         label.textColor = .white
+        label.textAlignment = .center
         label.numberOfLines = 0
         return label
     }()

@@ -28,17 +28,17 @@ class TaskResultView: UIViewController {
     }()
     
     private let progressItemOne: ProgressItem = {
-        let pi = ProgressItem(progress: 30, progressColor: UIColor.ExtraColor.c1, title: "Relevance")
+        let pi = ProgressItem(progress: 30, progressColor: UIColor.ExtraColor.c1, title: "Релевантность")
         return pi
     }()
 
     private let progressItemTwo: ProgressItem = {
-        let pi = ProgressItem(progress: 70, progressColor: UIColor.ExtraColor.c2, title: "Words purity")
+        let pi = ProgressItem(progress: 70, progressColor: UIColor.ExtraColor.c2, title: "Чистота\nречи")
         return pi
     }()
     
     private let progressItemThree: ProgressItem = {
-        let pi = ProgressItem(progress: 60, progressColor: UIColor.ExtraColor.c3, title: "Vocabulary")
+        let pi = ProgressItem(progress: 60, progressColor: UIColor.ExtraColor.c3, title: "Словарный\nзапас")
         return pi
     }()
     
