@@ -13,6 +13,7 @@
 		7421C05D2571A2F50060F35F /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7421C05C2571A2F50060F35F /* ApiError.swift */; };
 		7421C0632571AD330060F35F /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7421C0622571AD330060F35F /* TaskCell.swift */; };
 		7421C0662571B1E30060F35F /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7421C0652571B1E30060F35F /* Task.swift */; };
+		7421C078257235AD0060F35F /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7421C077257235AD0060F35F /* SpeechRecognizer.swift */; };
 		74E4C9EF25719295008A4BA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E4C9EE25719295008A4BA4 /* AppDelegate.swift */; };
 		74E4C9F825719299008A4BA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74E4C9F725719299008A4BA4 /* Assets.xcassets */; };
 		74E4C9FB25719299008A4BA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74E4C9F925719299008A4BA4 /* LaunchScreen.storyboard */; };
@@ -45,6 +46,7 @@
 		7421C05C2571A2F50060F35F /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
 		7421C0622571AD330060F35F /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		7421C0652571B1E30060F35F /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		7421C077257235AD0060F35F /* SpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizer.swift; sourceTree = "<group>"; };
 		74E4C9EB25719295008A4BA4 /* TalkyFoxy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TalkyFoxy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74E4C9EE25719295008A4BA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74E4C9F725719299008A4BA4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 		7421C0542571A25C0060F35F /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				7421C076257235110060F35F /* Speech */,
 				7421C0552571A2620060F35F /* Api */,
 			);
 			path = Services;
@@ -144,6 +147,14 @@
 				7421C0622571AD330060F35F /* TaskCell.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		7421C076257235110060F35F /* Speech */ = {
+			isa = PBXGroup;
+			children = (
+				7421C077257235AD0060F35F /* SpeechRecognizer.swift */,
+			);
+			path = Speech;
 			sourceTree = "<group>";
 		};
 		74E4C9E225719295008A4BA4 = {
@@ -371,6 +382,7 @@
 				A20AA6E32571CDB7006C84AA /* ChatCoordinator.swift in Sources */,
 				A20AA6EC2571E4F5006C84AA /* CallManager.swift in Sources */,
 				74E4CA19257198F8008A4BA4 /* AppCoordinator.swift in Sources */,
+				7421C078257235AD0060F35F /* SpeechRecognizer.swift in Sources */,
 				A20AA6E62571CDC5006C84AA /* ChatView.swift in Sources */,
 				74E4CA102571979F008A4BA4 /* TasksListView.swift in Sources */,
 				A20AA6E92571CDD2006C84AA /* ChatViewModel.swift in Sources */,
