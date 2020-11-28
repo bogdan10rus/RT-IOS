@@ -50,8 +50,6 @@ class ChatViewModel: ViewModel {
         
         speechRecognizer
             .recognizedText
-            .throttle(RxTimeInterval.seconds(1), scheduler: MainScheduler.instance)
-            .distinctUntilChanged()
             .filter { $0 != "" }
             .do(onNext: { [unowned self] text in
                 speechRecognizer.stopListening()

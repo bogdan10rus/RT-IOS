@@ -35,6 +35,8 @@ class SpeechRecognizer: NSObject {
     var recognizedText: Observable<String> {
         return recognizedTextSubject
             .compactMap { $0 }
+            .debounce(RxTimeInterval.seconds(1), scheduler: MainScheduler.instance)
+            .distinctUntilChanged()
     }
     
     override init() {
