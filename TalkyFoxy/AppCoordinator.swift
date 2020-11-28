@@ -51,8 +51,8 @@ class AppCoordinator: Coordinator<Void> {
         
         tabBarController.viewControllers = [
             tasksListNavigationController,
-            dictionaryNavigationController,
             botNavigationController,
+            dictionaryNavigationController,
             profileNavigationController]
 
         return Observable.never()
