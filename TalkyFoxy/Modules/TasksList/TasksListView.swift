@@ -37,6 +37,7 @@ class TasksListView: UIViewController {
         
         title = "Список заданий"
         tabBarItem.title = title
+        tabBarItem.image = #imageLiteral(resourceName: "task_ic")
     }
     
     required init?(coder: NSCoder) {

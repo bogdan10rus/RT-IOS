@@ -19,6 +19,7 @@ class ProfileView: UIViewController {
         
         title = "Профиль"
         tabBarItem.title = title
+        tabBarItem.image = #imageLiteral(resourceName: "profile_ic")
     }
     
     required init?(coder: NSCoder) {

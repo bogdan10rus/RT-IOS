@@ -19,6 +19,7 @@ class BotView: UIViewController {
         
         title = "Бот"
         tabBarItem.title = title
+        tabBarItem.image = #imageLiteral(resourceName: "call_ic")
     }
     
     required init?(coder: NSCoder) {

@@ -19,6 +19,7 @@ class DictionaryView: UIViewController {
         
         title = "Словарь"
         tabBarItem.title = title
+        tabBarItem.image = #imageLiteral(resourceName: "dict_ic")
     }
     
     required init?(coder: NSCoder) {
