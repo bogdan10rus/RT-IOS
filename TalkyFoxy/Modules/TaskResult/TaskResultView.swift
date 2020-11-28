@@ -82,6 +82,15 @@ class TaskResultView: UIViewController {
         return sv
     }()
     
+    private let speakWithBotButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Поговорить об ошибках", for: .normal)
+        button.backgroundColor = .orange
+        button.titleLabel?.font = .systemFont(ofSize: 20, weight: .medium)
+        
+        return button
+    }()
+    
     init (viewModel: TaskResultViewModel) {
         self.viewModel = viewModel
         
@@ -121,6 +130,7 @@ class TaskResultView: UIViewController {
         
         view.addSubview(headerWrapper)
         view.addSubview(progressWrapper)
+        view.addSubview(speakWithBotButton)
     }
     
     private func setupLayout() {
@@ -155,7 +165,7 @@ class TaskResultView: UIViewController {
         }
         
         progressWrapper.snp.makeConstraints{make in
-            make.trailing.bottom.leading.equalTo(view.safeAreaLayoutGuide)
+            make.trailing.leading.equalTo(view.safeAreaLayoutGuide)
             make.top.equalTo(headerWrapper.snp.bottom)
         }
         
@@ -174,6 +184,13 @@ class TaskResultView: UIViewController {
         progressStack.snp.makeConstraints{make in
             make.trailing.bottom.leading.equalToSuperview()
             make.height.equalTo(150)
+        }
+        
+        speakWithBotButton.snp.makeConstraints { make in
+            make.top.equalTo(progressWrapper.snp.bottom)
+            make.height.equalTo(100)
+            make.leading.trailing.equalToSuperview()
+            make.bottom.equalTo(view)
         }
     }
     

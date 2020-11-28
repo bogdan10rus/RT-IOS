@@ -86,7 +86,6 @@ class ChatViewModel: ViewModel {
                 
                 return apiService.postTaskDialog(dialog: TaskDialogObject(userId: 1, taskId: 3, messages: messages.reversed()))
             }
-            .debug()
             .flatMap { taskResultObject  -> Observable<TaskResult> in
                 .just(TaskResult(from: taskResultObject))
             }

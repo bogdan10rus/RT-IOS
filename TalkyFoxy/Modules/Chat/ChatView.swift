@@ -21,6 +21,7 @@ class ChatView: UIViewController {
         let btn = UIButton()
         btn.backgroundColor = .orange
         btn.setTitle("Завершить", for: .normal)
+        btn.titleLabel?.font = .systemFont(ofSize: 20, weight: .medium)
         
         return btn
     }()

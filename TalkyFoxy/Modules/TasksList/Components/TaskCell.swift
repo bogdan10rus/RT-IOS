@@ -17,16 +17,8 @@ class TaskCell: UITableViewCell {
         
         return view
     }()
-
-    private let timeImageView: UIImageView = {
-        let view = UIImageView()
-        view.contentMode = .scaleAspectFill
-        view.image = #imageLiteral(resourceName: "clock_ic")
-        
-        return view
-    }()
     
-    private let timeLabel: UILabel = {
+    private let subTextLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 15)
         label.textColor = .white
@@ -64,8 +56,7 @@ class TaskCell: UITableViewCell {
     
     private func setupViews() {
         wrapperView.addSubview(leftSideView)
-        wrapperView.addSubview(timeImageView)
-        wrapperView.addSubview(timeLabel)
+        wrapperView.addSubview(subTextLabel)
         wrapperView.addSubview(titleLabel)
         
         addSubview(wrapperView)
@@ -85,15 +76,9 @@ class TaskCell: UITableViewCell {
             make.height.equalToSuperview()
         }
         
-        timeImageView.snp.makeConstraints { (make) in
-            make.top.equalToSuperview().offset(10)
+        subTextLabel.snp.makeConstraints { (make) in
             make.leading.equalTo(leftSideView.snp.trailing).offset(10)
-            make.size.equalTo(25)
-        }
-        
-        timeLabel.snp.makeConstraints { (make) in
-            make.leading.equalTo(timeImageView.snp.trailing).offset(5)
-            make.centerY.equalTo(timeImageView)
+            make.top.equalToSuperview().offset(10)
             make.trailing.equalToSuperview().offset(-10)
         }
         
@@ -101,14 +86,14 @@ class TaskCell: UITableViewCell {
             make.leading.equalTo(leftSideView.snp.trailing).offset(10)
             make.bottom.equalToSuperview().offset(-10)
             make.trailing.equalToSuperview().offset(-10)
-            make.top.equalTo(timeImageView.snp.bottom).offset(20)
+            make.top.equalTo(subTextLabel.snp.bottom).offset(20)
         }
     }
     
     func setup(with task: Task) {
         self.task = task
         
-        timeLabel.text = task.category.titleRu
+        subTextLabel.text = task.category.titleRu
         titleLabel.text = task.titleRu
     }
     
