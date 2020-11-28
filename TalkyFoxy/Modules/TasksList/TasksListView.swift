@@ -30,8 +30,6 @@ class TasksListView: UIViewController {
         return tableView
     }()
     
-    var callManager: CallManager!
-    
     init (viewModel: TasksListViewModel) {
         self.viewModel = viewModel
         
@@ -55,8 +53,6 @@ class TasksListView: UIViewController {
         setupViews()
         setupLayout()
         setupBindings()
-        
-        setupCallManager()
     }
     
     private func setupViews() {
@@ -85,25 +81,5 @@ class TasksListView: UIViewController {
             .drive(onNext: { [unowned self] isLoading in
                 isLoading ? activityIndicator.startAnimating() : activityIndicator.stopAnimating()
             }).disposed(by: disposeBag)
-    }
-    
-    private func setupCallManager() {
-        callManager = AppDelegate.shared.callManager
-        
-        callManager.endHandler = { [weak self] in
-            guard let self = self else { return }
-            self.navigationController?.present(ChatView(viewModel: ChatViewModel()), animated: true)
-        }
-        
-        let backgroundTaskIdentifier =
-            UIApplication.shared.beginBackgroundTask(expirationHandler: nil)
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            AppDelegate.shared.displayIncomingCall(
-                uuid: UUID()
-            ) { _ in
-                UIApplication.shared.endBackgroundTask(backgroundTaskIdentifier)
-            }
-        }
     }
 }

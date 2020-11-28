@@ -18,7 +18,7 @@ class ChatCoordinator: Coordinator<Void> {
         let viewModel = ChatViewModel()
         let viewController = ChatView(viewModel: viewModel)
         
-        navigationController.pushViewController(viewController, animated: true)
+        navigationController.present(viewController, animated: true, completion: nil)
         
         return Observable.never()
     }

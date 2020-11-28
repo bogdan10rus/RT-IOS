@@ -9,6 +9,8 @@ import RxSwift
 import RxCocoa
 
 class TasksListViewModel: ViewModel {
+    private let callManager = AppDelegate.shared.callManager
+    
     struct Input {
         let selectedTask: AnyObserver<Task>
     }
@@ -16,6 +18,7 @@ class TasksListViewModel: ViewModel {
     let input: Input
     
     let selectedTaskSubject = PublishSubject<Task>()
+    let openChatView = PublishSubject<Void>()
     
     struct Output {
         let tasks: Driver<[Task]>
@@ -56,6 +59,29 @@ class TasksListViewModel: ViewModel {
             ])
             
             self.isLoadingSubject.onNext(false)
+        }
+        
+        setupCallManager()
+    }
+}
+
+private extension TasksListViewModel {
+    func setupCallManager() {
+        
+        callManager.endHandler = { [weak self] in
+            guard let self = self else { return }
+            self.openChatView.onNext(())
+        }
+        
+        let backgroundTaskIdentifier =
+            UIApplication.shared.beginBackgroundTask(expirationHandler: nil)
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            AppDelegate.shared.displayIncomingCall(
+                uuid: UUID()
+            ) { _ in
+                UIApplication.shared.endBackgroundTask(backgroundTaskIdentifier)
+            }
         }
     }
 }

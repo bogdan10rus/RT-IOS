@@ -20,6 +20,14 @@ class TasksListCoordinator: Coordinator<Void> {
         
         navigationController.pushViewController(viewController, animated: true)
         
+        viewModel.openChatView
+            .flatMap { [unowned self] _ -> Observable<Void> in
+                let chatCoordinator = ChatCoordinator(navigationController: navigationController)
+                return coordinate(to: chatCoordinator)
+            }
+            .subscribe()
+            .disposed(by: disposeBag)
+        
         return Observable.never()
     }
 }
