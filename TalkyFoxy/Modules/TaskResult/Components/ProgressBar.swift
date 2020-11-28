@@ -11,7 +11,7 @@ class ProgressBar: UIView {
     private var circleLayer = CAShapeLayer()
     private var progressLayer = CAShapeLayer()
     
-    private let progress: Double
+    private var progress: Double
     private let progressColor: UIColor
     private let radius: CGFloat
     
@@ -52,5 +52,12 @@ class ProgressBar: UIView {
         circularProgressAnimation.fillMode = .forwards
         circularProgressAnimation.isRemovedOnCompletion = false
         progressLayer.add(circularProgressAnimation, forKey: "progressAnim")
+    }
+    
+    func setup(value: Int) {
+        progress = Double(value)
+        
+        createCircularPath()
+        progressAnimation()
     }
 }

@@ -63,7 +63,7 @@ private extension TasksListViewModel {
     
     func setupCallManager() {
         
-        callManager.endHandler = { [weak self] in
+        callManager.answerHandler = { [weak self] in
             guard let self = self else { return }
             self.openChatView.onNext(())
         }

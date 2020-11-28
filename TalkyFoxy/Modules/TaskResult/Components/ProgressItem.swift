@@ -10,7 +10,7 @@ import UIKit
 class ProgressItem: UIView {
     
     private let title: String
-    private let progress: Int
+    private var progress: Int
     private let progressColor: UIColor
     
     private let progressCircle: UIView = {
@@ -24,7 +24,7 @@ class ProgressItem: UIView {
     private let progressLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 50, weight: .light)
-        label.textColor = .black
+        label.textColor = .white
         label.numberOfLines = 0
         return label
     }()
@@ -32,7 +32,7 @@ class ProgressItem: UIView {
     private let progressTitle: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 17, weight: .light)
-        label.textColor = .black
+        label.textColor = .white
         label.numberOfLines = 0
         return label
     }()
@@ -82,5 +82,10 @@ class ProgressItem: UIView {
             make.centerX.equalToSuperview()
             make.top.equalTo(progressLabel.snp.bottom).offset(10)
         }
+    }
+    
+    func setup(value: Int) {
+        progress = value
+        progressLabel.text = "\(value)"
     }
 }

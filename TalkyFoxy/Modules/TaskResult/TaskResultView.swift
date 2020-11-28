@@ -9,7 +9,7 @@ import RxSwift
 import RxCocoa
 
 class TaskResultView: UIViewController {
-    
+    private let disposeBag = DisposeBag()
     private let viewModel: TaskResultViewModel
     
     private let progressBarOne: ProgressBar = {
@@ -28,17 +28,17 @@ class TaskResultView: UIViewController {
     }()
     
     private let progressItemOne: ProgressItem = {
-        let pi = ProgressItem(progress: 30, progressColor: UIColor.ExtraColor.c1, title: "text1")
+        let pi = ProgressItem(progress: 30, progressColor: UIColor.ExtraColor.c1, title: "Relevance")
         return pi
     }()
 
     private let progressItemTwo: ProgressItem = {
-        let pi = ProgressItem(progress: 70, progressColor: UIColor.ExtraColor.c2, title: "text2")
+        let pi = ProgressItem(progress: 70, progressColor: UIColor.ExtraColor.c2, title: "Words purity")
         return pi
     }()
     
     private let progressItemThree: ProgressItem = {
-        let pi = ProgressItem(progress: 60, progressColor: UIColor.ExtraColor.c3, title: "text3")
+        let pi = ProgressItem(progress: 60, progressColor: UIColor.ExtraColor.c3, title: "Vocabulary")
         return pi
     }()
     
@@ -66,7 +66,7 @@ class TaskResultView: UIViewController {
     
     private let headerTitle: UILabel = {
         let label = UILabel()
-        label.text = "test"
+        label.text = ""
         label.font = .systemFont(ofSize: 30, weight: .medium)
         label.textColor = .white
         label.numberOfLines = 0
@@ -98,11 +98,11 @@ class TaskResultView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .white
+        view.backgroundColor = #colorLiteral(red: 0.1137254902, green: 0.1137254902, blue: 0.1490196078, alpha: 1)
         
         setupViews()
         setupLayout()
-        
+        setupBindings()
     }
     
     private func setupViews() {
@@ -175,6 +175,35 @@ class TaskResultView: UIViewController {
             make.trailing.bottom.leading.equalToSuperview()
             make.height.equalTo(150)
         }
+    }
+    
+    private func setupBindings() {
+        viewModel.output.title
+            .drive(onNext: { [unowned self] title in
+                headerTitle.text = title
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel.output.taskRelevance
+            .drive(onNext: { [unowned self] value in
+                progressBarOne.setup(value: value)
+                progressItemOne.setup(value: value)
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel.output.wordsPurity
+            .drive(onNext: { [unowned self] value in
+                progressBarTwo.setup(value: value)
+                progressItemTwo.setup(value: value)
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel.output.vocabulary
+            .drive(onNext: { [unowned self] value in
+                progressBarThree.setup(value: value)
+                progressItemThree.setup(value: value)
+            })
+            .disposed(by: disposeBag)
     }
     
 }
